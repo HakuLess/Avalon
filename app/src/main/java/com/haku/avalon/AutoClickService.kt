@@ -17,7 +17,7 @@ class AutoClickService : AccessibilityService() {
     private var isDoing = false
 
     // 延迟操作时间，等待页面切换、弹窗等UI稳定
-    private val DELAY = 3000L
+    private val DELAY = 2000L
 
     private val btnTextList = arrayListOf<Pair<String, Boolean>>(
         Pair("完成", true),
@@ -70,7 +70,7 @@ class AutoClickService : AccessibilityService() {
 
             // 无任何触发，则延迟滑动屏幕一次
             if (!anyTrigger) {
-                GestureUtils.verticalSwipe(service = this, startX = 500f, startY = 1500f, distance = -100f, duration = 500L)
+                GestureUtils.verticalSwipe(service = this, startX = 500f, startY = 1000f, distance = -100f, duration = 500L)
             }
         }
     }
